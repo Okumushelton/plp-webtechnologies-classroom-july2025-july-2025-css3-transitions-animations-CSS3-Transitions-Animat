@@ -1,11 +1,22 @@
-/* Base styles and resets */
+/* 
+   CSS RESET & BASE STYLES
+   I'm starting with a CSS reset to ensure consistent styling across different browsers.
+   This removes default margins, padding, and sets box-sizing to border-box for easier layout calculations.
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Using a modern, system-based font stack for better readability and performance */
 }
 
+/* 
+   BODY STYLING
+   I'm creating an attractive gradient background that spans the entire viewport.
+   The min-height ensures the gradient covers the screen even with minimal content.
+   Padding provides breathing room around the edges of the page.
+*/
 body {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     color: #fff;
@@ -13,18 +24,33 @@ body {
     padding: 20px;
 }
 
+/* 
+   CONTAINER LAYOUT
+   This container centers content horizontally and sets a max-width for large screens.
+   The padding creates consistent spacing inside the container.
+*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* 
+   HEADER STYLING
+   The header is centered with generous padding to make it stand out.
+   I've applied a fadeIn animation to create an engaging entrance when the page loads.
+*/
 header {
     text-align: center;
     padding: 30px 0;
     animation: fadeIn 1.5s ease-out;
 }
 
+/* 
+   HEADING STYLES
+   h1 has a large font size and text shadow to create depth and visual hierarchy.
+   h2 uses a contrasting color from our gradient to stand out against the background.
+*/
 h1 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -34,16 +60,26 @@ h1 {
 h2 {
     font-size: 2rem;
     margin: 30px 0 15px;
-    color: #fdbb2d;
+    color: #fdbb2d; /* Using the yellow from our gradient for contrast */
 }
 
+/* 
+   PARAGRAPH STYLING
+   Increased line height improves readability, especially for longer text passages.
+   The bottom margin creates consistent spacing between paragraphs.
+*/
 p {
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
 
-/* Animation sections */
+/* 
+   SECTION STYLING
+   These sections have a semi-transparent background with blur effect (glass morphism).
+   The rounded corners, shadow, and border create a modern, elevated card-like appearance.
+   The backdrop-filter creates a frosted glass effect that's popular in modern UI design.
+*/
 .section {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -54,7 +90,12 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Button styles with hover effects */
+/* 
+   BUTTON STYLING
+   Buttons have a gradient background, rounded corners, and subtle shadow for depth.
+   The transition property enables smooth animation of property changes.
+   I've used a generous margin to ensure buttons have space around them.
+*/
 .btn {
     background: linear-gradient(to right, #ff9966, #ff5e62);
     color: white;
@@ -69,17 +110,31 @@ p {
     margin: 10px;
 }
 
+/* 
+   BUTTON HOVER EFFECTS
+   On hover, buttons lift up (translateY) and the shadow intensifies for a 3D effect.
+   The gradient direction reverses to create a subtle color shift.
+*/
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     background: linear-gradient(to right, #ff5e62, #ff9966);
 }
 
+/* 
+   BUTTON ACTIVE STATE
+   When clicked, the button moves down slightly to provide tactile feedback.
+*/
 .btn:active {
     transform: translateY(1px);
 }
 
-/* Animation boxes */
+/* 
+   ANIMATION BOXES
+   These are the containers for our CSS animation examples.
+   They have a fixed size, gradient background, and centered content.
+   The shadow adds depth and makes them appear to float above the background.
+*/
 .animation-box {
     width: 150px;
     height: 150px;
@@ -94,7 +149,11 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Card styles */
+/* 
+   CARD CONTAINER WITH 3D PERSPECTIVE
+   The perspective property enables 3D transformations for the card flip effect.
+   Without this, the flip animation would look flat and unrealistic.
+*/
 .card-container {
     perspective: 1000px;
     width: 200px;
@@ -102,6 +161,12 @@ p {
     margin: 20px;
 }
 
+/* 
+   CARD STYLING
+   transform-style: preserve-3d maintains the 3D positioning of child elements.
+   The transition enables smooth animation when the card is flipped.
+   The cursor indicates this element is interactive.
+*/
 .card {
     width: 100%;
     height: 100%;
@@ -111,6 +176,12 @@ p {
     cursor: pointer;
 }
 
+/* 
+   CARD FACES (FRONT AND BACK)
+   Both faces are absolutely positioned to occupy the same space.
+   backface-visibility: hidden prevents the back face from showing when facing away.
+   Flexbox centers content both horizontally and vertically.
+*/
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -124,18 +195,33 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* 
+   CARD FRONT STYLING
+   The front face has a warm gradient to distinguish it from the back.
+*/
 .card-front {
     background: linear-gradient(45deg, #ff9966, #ff5e62);
     color: white;
 }
 
+/* 
+   CARD BACK STYLING
+   The back face has a different gradient and is initially rotated 180 degrees.
+   This means it starts facing away from the viewer.
+*/
 .card-back {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
     transform: rotateY(180deg);
 }
 
-/* Modal styles */
+/* 
+   MODAL STYLING
+   The modal is hidden by default (display: none) and will be shown via JavaScript.
+   It uses fixed positioning to cover the entire viewport.
+   The semi-transparent background creates an overlay effect.
+   Flexbox centers the modal content both horizontally and vertically.
+*/
 .modal {
     display: none;
     position: fixed;
@@ -149,6 +235,12 @@ p {
     justify-content: center;
 }
 
+/* 
+   MODAL CONTENT
+   The modal content has a gradient background and generous padding.
+   The slideIn animation plays when the modal is displayed.
+   The shadow creates depth, making the modal appear to float above the overlay.
+*/
 .modal-content {
     background: linear-gradient(135deg, #1a2a6c, #b21f1f);
     padding: 30px;
@@ -160,6 +252,11 @@ p {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
+/* 
+   CLOSE BUTTON STYLING
+   Positioned in the top-right corner of the modal.
+   The transition enables smooth rotation on hover.
+*/
 .close-btn {
     position: absolute;
     top: 15px;
@@ -169,11 +266,19 @@ p {
     transition: transform 0.3s;
 }
 
+/* 
+   CLOSE BUTTON HOVER EFFECT
+   Rotates the close button on hover for a playful interaction.
+*/
 .close-btn:hover {
     transform: rotate(90deg);
 }
 
-/* Flexbox containers */
+/* 
+   FLEX CONTAINER
+   Uses flexbox to create a responsive layout that wraps on smaller screens.
+   Items are centered both horizontally and vertically.
+*/
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -182,35 +287,48 @@ p {
     margin: 20px 0;
 }
 
-/* Keyframe animations */
+/* 
+   KEYFRAME ANIMATIONS
+   These define the actual animation sequences that will be applied to elements.
+*/
+
+/* Fade in from above animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Pulsing scale animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
+/* Slide in from above animation */
 @keyframes slideIn {
     from { transform: translateY(-50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Bouncing animation */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-20px); }
     60% { transform: translateY(-10px); }
 }
 
+/* Continuous rotation animation */
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* Animation classes */
+/* 
+   ANIMATION CLASSES
+   These utility classes apply the keyframe animations with specific timing and behavior.
+   The infinite value makes the animation repeat indefinitely.
+*/
 .pulse {
     animation: pulse 2s infinite;
 }
@@ -223,7 +341,11 @@ p {
     animation: spin 3s linear infinite;
 }
 
-/* Code display */
+/* 
+   CODE DISPLAY STYLING
+   Creates a code editor-like appearance for displaying code snippets.
+   Monospace font and dark background are typical for code displays.
+*/
 .code-display {
     background: #2d2d2d;
     color: #f8f8f2;
@@ -234,7 +356,11 @@ p {
     font-family: 'Courier New', monospace;
 }
 
-/* Responsive design */
+/* 
+   RESPONSIVE DESIGN
+   Media query adjusts layout for screens narrower than 768px (typical mobile devices).
+   Changes flex direction to column and reduces font sizes for better mobile experience.
+*/
 @media (max-width: 768px) {
     .flex-container {
         flex-direction: column;

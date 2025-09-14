@@ -5,23 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Animations & JavaScript Demo</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 
+        I'm linking an external CSS file to keep my styles organized and separate from the HTML structure.
+        This follows the best practice of separation of concerns.
+    -->
 </head>
 <body>
+    <!-- 
+        The container div wraps all content to provide consistent padding and max-width
+        This helps with responsive design and keeps content from stretching too wide on large screens
+    -->
     <div class="container">
         <header>
             <h1>CSS Animations & JavaScript Demo</h1>
             <p>Explore the power of CSS3 animations combined with JavaScript functions</p>
+            <!-- 
+                The header introduces the page and gives users a clear understanding of what to expect.
+                I've used semantic HTML5 tags like <header> for better document structure and accessibility.
+            -->
         </header>
         
-        <!-- Part 1: CSS Animations -->
+        <!-- 
+            SECTION 1: CSS ANIMATIONS
+            This section demonstrates pure CSS animations and transitions without JavaScript
+            I'm using the <section> element to semantically group related content
+        -->
         <section class="section">
             <h2>Part 1: CSS3 Transitions and Animations</h2>
             <p>Hover over and click the elements below to see CSS transitions and animations in action.</p>
+            <!-- 
+                This paragraph explains what the user should do to experience the animations.
+                Clear instructions help users engage with the interactive elements.
+            -->
             
             <div class="flex-container">
+                <!-- 
+                    This button demonstrates CSS transitions on hover
+                    The 'btn' class provides the base styles, and the hover effects are defined in CSS
+                -->
                 <button class="btn" id="hoverButton">Hover Me</button>
+                
+                <!-- 
+                    These divs demonstrate CSS keyframe animations
+                    The 'pulse' and 'bounce' classes apply continuous animations
+                    I'm using meaningful IDs that describe the element's purpose
+                -->
                 <div class="animation-box pulse" id="pulseBox">Pulse</div>
                 <div class="animation-box bounce" id="bounceBox">Bounce</div>
+                
+                <!-- 
+                    This card demonstrates CSS 3D transforms for a flip animation
+                    The card-container provides perspective for the 3D effect
+                -->
                 <div class="card-container">
                     <div class="card" id="flipCard">
                         <div class="card-front">
@@ -35,65 +70,72 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- <div class="code-display">
-                /* CSS Keyframe Animation Example */
-                @keyframes pulse {
-                    0% { transform: scale(1); }
-                    50% { transform: scale(1.05); }
-                    100% { transform: scale(1); }
-                }
-                
-                .pulse {
-                    animation: pulse 2s infinite;
-                }
-            </div> -->
         </section>
         
-        <!-- Part 2: JavaScript Functions -->
+        <!-- 
+            SECTION 2: JAVASCRIPT FUNCTIONS
+            This section demonstrates JavaScript concepts like scope, parameters, and return values
+            The buttons will trigger JavaScript functions when clicked
+        -->
         <section class="section">
             <h2>Part 2: JavaScript Functions</h2>
             <p>Demonstrating function scope, parameters, and return values.</p>
+            <!-- 
+                This section focuses on JavaScript functionality rather than visual effects
+                The functions will demonstrate important programming concepts
+            -->
             
             <div class="flex-container">
+                <!-- 
+                    These buttons have IDs that clearly describe their function
+                    The JavaScript will use these IDs to attach click event listeners
+                -->
                 <button class="btn" id="calculateAreaBtn">Calculate Area</button>
                 <button class="btn" id="showMessageBtn">Show Message</button>
                 <button class="btn" id="startAnimationBtn">Start Animation</button>
             </div>
             
+            <!-- 
+                This div will display output from the JavaScript functions
+                Using a dedicated output area keeps the interface clean and organized
+            -->
             <div id="output" class="code-display">
-                <!-- // Output will appear here -->
+                // Output will appear here
+                <!-- 
+                    This placeholder text gives users a hint about what to expect
+                    It will be replaced with actual output when buttons are clicked
+                -->
             </div>
-            
-            <!-- <div class="code-display">
-                // JavaScript Function Examples
-                
-                // Function with parameters and return value
-                function calculateRectangleArea(width, height) {
-                    return width * height;
-                }
-                
-                // Function demonstrating scope
-                function scopeDemo() {
-                    var localVar = "I'm local";
-                    globalVar = "I'm global";
-                    console.log(localVar);
-                }
-            </div> -->
         </section>
         
-        <!-- Part 3: Combined CSS & JavaScript -->
+        <!-- 
+            SECTION 3: COMBINED CSS & JAVASCRIPT
+            This section shows how JavaScript can control CSS animations
+            It demonstrates the integration of both technologies
+        -->
         <section class="section">
             <h2>Part 3: Combined CSS Animations & JavaScript</h2>
             <p>Using JavaScript to trigger and control CSS animations.</p>
+            <!-- 
+                This section is the culmination of the previous two
+                It shows how JavaScript and CSS can work together to create interactive experiences
+            -->
             
             <div class="flex-container">
+                <!-- 
+                    These buttons will use JavaScript to manipulate CSS animations
+                    This demonstrates the powerful combination of both technologies
+                -->
                 <button class="btn" id="togglePulseBtn">Toggle Pulse</button>
                 <button class="btn" id="openModalBtn">Open Modal</button>
                 <button class="btn" id="changeColorBtn">Change Color</button>
             </div>
             
             <div class="flex-container">
+                <!-- 
+                    These boxes are targets for JavaScript-controlled animations
+                    They have IDs so JavaScript can easily select and manipulate them
+                -->
                 <div id="box1" class="animation-box">Box 1</div>
                 <div id="box2" class="animation-box">Box 2</div>
                 <div id="box3" class="animation-box">Box 3</div>
@@ -101,16 +143,38 @@
         </section>
     </div>
     
-    <!-- Modal -->
+    <!-- 
+        MODAL DIALOG
+        This modal is hidden by default and will be shown using JavaScript
+        It demonstrates how JavaScript can control CSS animations for UI elements
+    -->
     <div id="modal" class="modal">
         <div class="modal-content">
+            <!-- 
+                The close button uses the multiplication symbol (×) as a close icon
+                This is a common pattern that users will recognize
+            -->
             <span class="close-btn" id="closeModalBtn">&times;</span>
             <h2>Modal Title</h2>
             <p>This modal was triggered with JavaScript and animated with CSS!</p>
+            <!-- 
+                This text explains how the modal demonstrates the combination of JS and CSS
+                It reinforces the learning objectives of the assignment
+            -->
             <button class="btn" id="closeModalBtn2">Close</button>
         </div>
     </div>
     
+    <!-- 
+        EXTERNAL JAVASCRIPT
+        I'm linking an external JavaScript file to keep my code organized
+        This follows best practices for separation of concerns and maintainability
+    -->
     <script src="script.js"></script>
+    <!-- 
+        The script tag is placed at the end of the body to ensure the DOM is fully loaded
+        before the JavaScript executes. This prevents errors from trying to manipulate
+        elements that haven't been parsed yet.
+    -->
 </body>
 </html>
