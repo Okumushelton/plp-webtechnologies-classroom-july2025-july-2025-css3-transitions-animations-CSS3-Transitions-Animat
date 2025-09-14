@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations & JavaScript Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS Animations & JavaScript Demo</h1>
+            <p>Explore the power of CSS3 animations combined with JavaScript functions</p>
+        </header>
+        
+        <!-- Part 1: CSS Animations -->
+        <section class="section">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+            <p>Hover over and click the elements below to see CSS transitions and animations in action.</p>
+            
+            <div class="flex-container">
+                <button class="btn" id="hoverButton">Hover Me</button>
+                <div class="animation-box pulse" id="pulseBox">Pulse</div>
+                <div class="animation-box bounce" id="bounceBox">Bounce</div>
+                <div class="card-container">
+                    <div class="card" id="flipCard">
+                        <div class="card-front">
+                            <h3>Front</h3>
+                            <p>Click to flip</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Back</h3>
+                            <p>Hello!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="code-display">
+                /* CSS Keyframe Animation Example */
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                
+                .pulse {
+                    animation: pulse 2s infinite;
+                }
+            </div> -->
+        </section>
+        
+        <!-- Part 2: JavaScript Functions -->
+        <section class="section">
+            <h2>Part 2: JavaScript Functions</h2>
+            <p>Demonstrating function scope, parameters, and return values.</p>
+            
+            <div class="flex-container">
+                <button class="btn" id="calculateAreaBtn">Calculate Area</button>
+                <button class="btn" id="showMessageBtn">Show Message</button>
+                <button class="btn" id="startAnimationBtn">Start Animation</button>
+            </div>
+            
+            <div id="output" class="code-display">
+                <!-- // Output will appear here -->
+            </div>
+            
+            <!-- <div class="code-display">
+                // JavaScript Function Examples
+                
+                // Function with parameters and return value
+                function calculateRectangleArea(width, height) {
+                    return width * height;
+                }
+                
+                // Function demonstrating scope
+                function scopeDemo() {
+                    var localVar = "I'm local";
+                    globalVar = "I'm global";
+                    console.log(localVar);
+                }
+            </div> -->
+        </section>
+        
+        <!-- Part 3: Combined CSS & JavaScript -->
+        <section class="section">
+            <h2>Part 3: Combined CSS Animations & JavaScript</h2>
+            <p>Using JavaScript to trigger and control CSS animations.</p>
+            
+            <div class="flex-container">
+                <button class="btn" id="togglePulseBtn">Toggle Pulse</button>
+                <button class="btn" id="openModalBtn">Open Modal</button>
+                <button class="btn" id="changeColorBtn">Change Color</button>
+            </div>
+            
+            <div class="flex-container">
+                <div id="box1" class="animation-box">Box 1</div>
+                <div id="box2" class="animation-box">Box 2</div>
+                <div id="box3" class="animation-box">Box 3</div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Modal Title</h2>
+            <p>This modal was triggered with JavaScript and animated with CSS!</p>
+            <button class="btn" id="closeModalBtn2">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
